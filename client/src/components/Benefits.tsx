@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Benefits = () => {
-  return <div>Benefits</div>;
-};
+const Benefits = () => <div>Benefits</div>;
 
 export default Benefits;
