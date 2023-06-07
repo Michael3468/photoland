@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { Footer, Header } from './components';
 import { Home, ProductDetails, Products, Search } from './pages';
@@ -24,6 +24,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => <div>App</div>;
+const App = () => <RouterProvider router={router} />;
 
 export default App;
