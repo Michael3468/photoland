@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "cm": "cz",
+    "release-same-version": "git flow release start next && git flow release finish -n next",
+    "release-minor": "git flow release start next && npm version minor && git flow release finish -n next",
+    "release-patch": "git flow release start next && npm version patch && git flow release finish -n next",
+    "push": "git checkout master && git push && git checkout develop && git push",
+    "stylelint": "stylelint **/*.scss",
+    "stylelint-fix": "stylelint **/*.scss --fix"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "node-sass": "^9.0.0",
+    "prettier": "^2.8.8",
+    "sass-loader": "^13.3.1",
+    "stylelint": "^15.7.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "typescript": "^5.1.3"
+  },
+  "version": "0.1.0"
+}
