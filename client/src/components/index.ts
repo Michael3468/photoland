@@ -10,6 +10,7 @@ import LatestProducts from './LatestProducts';
 import MainSlider from './MainSlider';
 import Product from './Product';
 import ProductSlider from './ProductSlider';
+import Promo from './Promo';
 import Qty from './Qty';
 import RelatedProducts from './RelatedProducts';
 import SearchForm from './SearchForm';
@@ -27,6 +28,7 @@ export {
   MainSlider,
   Product,
   ProductSlider,
+  Promo,
   Qty,
   RelatedProducts,
   SearchForm,
