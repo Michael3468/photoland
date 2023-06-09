@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { LatestProducts } from '../components';
+import { Hero, LatestProducts } from '../components';
 
 const Home = () => (
   <section>
+    <Hero />
     <LatestProducts />
   </section>
 );
