@@ -3,13 +3,14 @@ import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Product } from '.';
+import { TProduct } from '../types';
 
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.min.css';
 import '../slider.css';
 
 type Props = {
-  data: any;
+  data: TProduct[] | null;
 };
 
 const ProductSlider: FC<Props> = ({ data }) => (
@@ -41,7 +42,7 @@ const ProductSlider: FC<Props> = ({ data }) => (
     className="productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]"
   >
     <div>
-      {data?.map((product: any) => (
+      {data?.map((product) => (
         <SwiperSlide key={product.id}>
           <Product product={product} />
         </SwiperSlide>
