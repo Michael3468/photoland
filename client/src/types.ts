@@ -30,5 +30,12 @@ type TProduct = {
   };
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export type { TProduct };
+type TCategory = {
+  id: number;
+  attributes: {
+    title: string;
+    // ...
+  };
+};
+
+export type { TProduct, TCategory };
