@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { SlBag } from 'react-icons/sl';
 import { Link } from 'react-router-dom';
@@ -9,19 +9,24 @@ import { Logo } from '../img';
 
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(CartContext);
+  const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
     <header className="bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]">
       <div className="container mx-auto">
         <div className="flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0">
           {/* menu */}
-          <div className="text-3xl xl:hidden cursor-pointer">
+          <div className="text-3xl xl:hidden cursor-pointer" onClick={() => setCatNavMobile(true)}>
             <FiMenu />
           </div>
 
           {/* category nav mobile */}
-          <div>
-            <CategoryNavMobile />
+          <div
+            className={`${
+              catNavMobile ? 'left-0' : '-left-full'
+            } fixed top-0 bottom-0 z-30 w-full h-screen transition-all duration-200`}
+          >
+            <CategoryNavMobile setCatNavMobile={setCatNavMobile} />
           </div>
 
           {/* logo */}
@@ -35,16 +40,18 @@ const Header = () => {
           </div>
 
           {/* phone & cart */}
-          <div>
+          <div className="flex items-center gap-x-[10px]">
             {/* phone */}
-            <div>Need help? 123 456 789</div>
+            <div className="hidden xl:flex uppercase">Need help? 123 456 789</div>
 
             {/* cart icon */}
             <div className="relative cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
               <SlBag className="text-2xl" />
 
               {/* amount */}
-              <div>2</div>
+              <div className="bg-accent text-primary absolute min-w-[20px] min-h-[20px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracing-[-0.1em] px-[3px]">
+                9
+              </div>
             </div>
 
             {/* cart */}
