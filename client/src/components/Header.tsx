@@ -12,11 +12,11 @@ const Header = () => {
   const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
-    <header className="bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]">
+    <header className="fixed top-0 z-40 py-6 w-full bg-primary">
       <div className="container mx-auto">
-        <div className="flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0">
+        <div className="flex flex-row gap-4 justify-between mb-4 lg:items-center lg:mb-0">
           {/* menu */}
-          <div className="text-3xl xl:hidden cursor-pointer" onClick={() => setCatNavMobile(true)}>
+          <div className="text-3xl cursor-pointer xl:hidden" onClick={() => setCatNavMobile(true)}>
             <FiMenu />
           </div>
 
@@ -42,7 +42,7 @@ const Header = () => {
           {/* phone & cart */}
           <div className="flex items-center gap-x-[10px]">
             {/* phone */}
-            <div className="hidden xl:flex uppercase">Need help? 123 456 789</div>
+            <div className="hidden uppercase xl:flex">Need help? 123 456 789</div>
 
             {/* cart icon */}
             <div className="relative cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
