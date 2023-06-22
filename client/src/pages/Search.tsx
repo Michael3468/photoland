@@ -15,7 +15,7 @@ const Search = () => {
   const products: TProduct[] = data || [];
 
   return (
-    <div className={`${constants.themes.main.styles.header.marginBottom}`}>
+    <div className={`${constants.themes.main.styles.contentBlock.marginTop}`}>
       <div className="container mx-auto">
         <div className="flex gap-x-[30px] justify-center">
           {/* category nav */}

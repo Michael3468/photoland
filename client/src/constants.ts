@@ -2,8 +2,8 @@ const constants = {
   themes: {
     main: {
       styles: {
-        header: {
-          marginBottom: 'mt-[160px] lg:mt-[110px]',
+        contentBlock: {
+          marginTop: 'mt-[160px] lg:mt-[110px]',
         },
       },
     },
