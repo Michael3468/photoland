@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { RelatedProducts } from '../components';
 import { constants } from '../constants';
+import { CartContext } from '../context/CartContext';
 import useFetch from '../hooks/useFetch';
 import { TProduct } from '../types';
 
 const ProductDetails = () => {
+  const { addToCart } = useContext(CartContext);
   const { id } = useParams();
   const [product, setProduct] = useState<TProduct>();
 
@@ -41,10 +43,10 @@ const ProductDetails = () => {
                 product && `http://localhost:1337${product.attributes.image.data.attributes.url}`
               }
               alt={product && product?.attributes.image.data.attributes.name}
-              className="w-full p-2 sm:p-5"
+              className="p-2 w-full sm:p-5"
             />
           </div>
-          <div className="flex flex-col flex-1 justify-center p-6 sm:p-10 lg:p-12 rounded-lg xl:p-20 bg-primary">
+          <div className="flex flex-col flex-1 justify-center p-6 rounded-lg sm:p-10 lg:p-12 xl:p-20 bg-primary">
             {/* category title */}
             <div className="mb-2 text-lg font-medium uppercase text-accent">
               {`${product?.attributes.categories.data[0].attributes.title} cameras`}
@@ -57,12 +59,12 @@ const ProductDetails = () => {
             <div className="mb-12">{product?.attributes.description}</div>
 
             {/* price & button */}
-            <div className="flex flex-col xs:flex-row gap-x-8 items-center justify-center">
+            <div className="flex flex-col gap-x-8 justify-center items-center xs:flex-row">
               {/* price */}
-              <div className="text-3xl font-semibold text-accent mb-7 xs:mb-0">
+              <div className="mb-7 text-3xl font-semibold text-accent xs:mb-0">
                 {`$${product?.attributes.price}`}
               </div>
-              <button type="button" className="btn btn-accent">
+              <button type="button" className="btn btn-accent" onClick={() => addToCart(product, id)}>
                 Add to Cart
               </button>
             </div>
