@@ -38,4 +38,10 @@ type TCategory = {
   };
 };
 
-export type { TProduct, TCategory };
+type TCart = {
+  id: string;
+  item: TProduct;
+  amount: number;
+};
+
+export type { TProduct, TCategory, TCart };

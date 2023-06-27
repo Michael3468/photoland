@@ -1,13 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, createContext, useCallback, useMemo, useState } from 'react';
 
-import { TProduct } from '../types';
-
-type TCart = {
-  id: string;
-  item: TProduct;
-  amount: number;
-};
+import { TCart, TProduct } from '../types';
 
 type CartContextType = {
   isOpen: boolean;
