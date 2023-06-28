@@ -7,6 +7,7 @@ type CartContextType = {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
   addToCart: (item: TProduct | undefined, id: string | undefined) => void;
+  removeFromCart: (id: string) => void;
   cart: TCart[];
 };
 
@@ -14,6 +15,7 @@ export const CartContext = createContext<CartContextType>({
   isOpen: false,
   setIsOpen: () => console.log('setIsOpen is not implemented'),
   addToCart: () => console.log('addToCart'),
+  removeFromCart: () => console.log('removeFromCart'),
   cart: [],
 });
 
@@ -54,9 +56,23 @@ const CartProvider: FC<Props> = ({ children }) => {
     [cart, setCart],
   );
 
+  const removeFromCart = useCallback(
+    (id: string) => {
+      const newCart = cart.filter((item) => item.id !== id);
+      setCart(newCart);
+    },
+    [cart],
+  );
+
   const contextValue = useMemo(
-    () => ({ isOpen, setIsOpen: (value: boolean) => setIsOpen(value), addToCart, cart }),
-    [isOpen, setIsOpen, addToCart, cart],
+    () => ({
+      isOpen,
+      setIsOpen: (value: boolean) => setIsOpen(value),
+      addToCart,
+      removeFromCart,
+      cart,
+    }),
+    [isOpen, setIsOpen, addToCart, removeFromCart, cart],
   );
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
