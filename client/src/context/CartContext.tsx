@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { FC, createContext, useCallback, useMemo, useState } from 'react';
+import React, { FC, createContext, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { TCart, TProduct } from '../types';
 
@@ -9,6 +9,7 @@ type CartContextType = {
   addToCart: (item: TProduct | undefined, id: string | undefined) => void;
   removeFromCart: (id: string) => void;
   cart: TCart[];
+  itemsAmount: number;
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -17,6 +18,7 @@ export const CartContext = createContext<CartContextType>({
   addToCart: () => console.log('addToCart'),
   removeFromCart: () => console.log('removeFromCart'),
   cart: [],
+  itemsAmount: 0,
 });
 
 type Props = {
@@ -29,6 +31,12 @@ const CartProvider: FC<Props> = ({ children }) => {
   const [itemsAmount, setItemsAmount] = useState(0);
   const [amount, setAmount] = useState(0);
   const [total, setTotal] = useState(0);
+
+  // cart amount
+  useEffect(() => {
+    const totalItems = cart.reduce((acc, cur) => acc + cur.amount, 0);
+    setItemsAmount(totalItems);
+  }, [cart]);
 
   const addToCart = useCallback(
     (item: TProduct | undefined, id: string | undefined) => {
@@ -71,8 +79,9 @@ const CartProvider: FC<Props> = ({ children }) => {
       addToCart,
       removeFromCart,
       cart,
+      itemsAmount,
     }),
-    [isOpen, setIsOpen, addToCart, removeFromCart, cart],
+    [isOpen, setIsOpen, addToCart, removeFromCart, cart, itemsAmount],
   );
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

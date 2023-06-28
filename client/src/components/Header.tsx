@@ -8,7 +8,7 @@ import { CartContext } from '../context/CartContext';
 import { Logo } from '../img';
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
@@ -50,7 +50,7 @@ const Header = () => {
 
               {/* amount */}
               <div className="bg-accent text-primary absolute min-w-[20px] min-h-[20px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracing-[-0.1em] px-[3px]">
-                9
+                {itemsAmount}
               </div>
             </div>
 
