@@ -16,8 +16,8 @@ type CartContextType = {
   setIsOpen: (value: boolean) => void;
   addToCart: (item: TProduct | undefined, id: string | undefined) => void;
   removeFromCart: (id: string) => void;
-  handleInput: (e: ChangeEvent<HTMLInputElement>, id: string) => void;
-  handleSelect: (e: ChangeEvent<HTMLSelectElement>, id: string) => void;
+  handleInput: (event: ChangeEvent<HTMLInputElement>, id: string) => void;
+  handleSelect: (event: ChangeEvent<HTMLSelectElement>, id: string) => void;
   cart: TCart[];
   itemsAmount: number;
 };
@@ -85,8 +85,8 @@ const CartProvider: FC<Props> = ({ children }) => {
   );
 
   const handleInput = useCallback(
-    (e: ChangeEvent<HTMLInputElement>, id: string) => {
-      const value = parseInt(e.target?.value, 10);
+    (event: ChangeEvent<HTMLInputElement>, id: string) => {
+      const value = parseInt(event.target?.value, 10);
 
       const cartItem = cart.find((item) => item.id === id);
 
@@ -114,8 +114,8 @@ const CartProvider: FC<Props> = ({ children }) => {
   );
 
   const handleSelect = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>, id: string) => {
-      const value = parseInt(e.target.value, 10);
+    (event: ChangeEvent<HTMLSelectElement>, id: string) => {
+      const value = parseInt(event.target.value, 10);
 
       const cartItem = cart.find((item) => item.id === id);
 

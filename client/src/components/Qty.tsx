@@ -16,7 +16,7 @@ const Qty: FC<Props> = ({ item }) => {
         <select
           className="p-2 rounded-lg w-[100px] h-10 outline-none text-primary"
           value={item.amount}
-          onChange={(e) => handleSelect(e, item.id)}
+          onChange={(event) => handleSelect(event, item.id)}
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -34,7 +34,7 @@ const Qty: FC<Props> = ({ item }) => {
           className="text-primary placeholder:text-primary h-10 rounded-md p-3 w-[100px] outline-accent"
           type="text"
           placeholder={`${item.amount}`}
-          onBlur={(e) => handleInput(e, item.id)}
+          onBlur={(event) => handleInput(event, item.id)}
           value={item.amount}
         />
       )}
