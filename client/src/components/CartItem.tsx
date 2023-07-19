@@ -38,13 +38,13 @@ const CartItem: FC<Props> = ({ item }) => {
           </div>
         </div>
 
-        <div className="flex gap-x-12 items-center">
+        <div className="flex gap-x-12 items-center mb-2">
           {/* quantity */}
-          <div className="flex gap-x-4 mb-2">
+          <div className="flex gap-x-4">
             <Qty item={item} />
-            <div className="text-xl text-accent">
-              {`$ ${item.item.attributes.price * item.amount}`}
-            </div>
+          </div>
+          <div className="text-xl text-accent">
+            {`$ ${item.item.attributes.price * item.amount}`}
           </div>
         </div>
 

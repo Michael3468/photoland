@@ -9,7 +9,7 @@ const Cart = () => {
 
   return (
     <div className="px-4 w-full h-full text-white">
-      <div>
+      <div className="overflow-y-auto overflow-x-hidden h-[75vh]">
         {/* close icon */}
         <div
           onClick={() => setIsOpen(false)}
