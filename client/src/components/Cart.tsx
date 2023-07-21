@@ -5,7 +5,7 @@ import { CartContext } from '../context/CartContext';
 import CartItem from './CartItem';
 
 const Cart = () => {
-  const { setIsOpen, cart } = useContext(CartContext);
+  const { setIsOpen, cart, total } = useContext(CartContext);
 
   return (
     <div className="px-4 w-full h-full text-white">
@@ -18,12 +18,30 @@ const Cart = () => {
           <IoClose />
         </div>
 
+        {/* cart items */}
         <div className="flex flex-col gap-y-10 px-2">
           {cart.map((item) => (
             <CartItem item={item} key={item.id} />
           ))}
         </div>
       </div>
+
+      {/* subtotal & total */}
+      {cart.length >= 1 && (
+        <div className="flex flex-col px-6 py-10">
+          {/* subtotal */}
+          <div className="flex justify-between text-lg">
+            <div>Subtotal:</div>
+            <div>{`$ ${total}`}</div>
+          </div>
+
+          {/* total */}
+          <div className="flex justify-between text-2xl">
+            <div>Total:</div>
+            <div>{`$ ${total}`}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

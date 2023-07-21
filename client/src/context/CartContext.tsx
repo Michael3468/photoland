@@ -20,6 +20,7 @@ type CartContextType = {
   handleSelect: (event: ChangeEvent<HTMLSelectElement>, id: string) => void;
   cart: TCart[];
   itemsAmount: number;
+  total: number;
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -31,6 +32,7 @@ export const CartContext = createContext<CartContextType>({
   handleSelect: () => console.log('handleSelect'),
   cart: [],
   itemsAmount: 0,
+  total: 0,
 });
 
 type Props = {
@@ -48,6 +50,12 @@ const CartProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
     const totalItems = cart.reduce((acc, cur) => acc + cur.amount, 0);
     setItemsAmount(totalItems);
+  }, [cart]);
+
+  // cart total
+  useEffect(() => {
+    const totalPrice = cart.reduce((acc, cur) => acc + cur.item.attributes.price * cur.amount, 0);
+    setTotal(totalPrice);
   }, [cart]);
 
   const addToCart = useCallback(
@@ -145,8 +153,19 @@ const CartProvider: FC<Props> = ({ children }) => {
       handleSelect,
       cart,
       itemsAmount,
+      total,
     }),
-    [isOpen, setIsOpen, addToCart, removeFromCart, handleInput, handleSelect, cart, itemsAmount],
+    [
+      isOpen,
+      setIsOpen,
+      addToCart,
+      removeFromCart,
+      handleInput,
+      handleSelect,
+      cart,
+      itemsAmount,
+      total,
+    ],
   );
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
