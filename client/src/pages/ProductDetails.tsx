@@ -59,12 +59,16 @@ const ProductDetails = () => {
             <div className="mb-12">{product?.attributes.description}</div>
 
             {/* price & button */}
-            <div className="flex flex-col gap-x-8 justify-center items-center xs:flex-row">
+            <div className="flex flex-col gap-x-8 items-center xs:flex-row">
               {/* price */}
               <div className="mb-7 text-3xl font-semibold text-accent xs:mb-0">
                 {`$${product?.attributes.price}`}
               </div>
-              <button type="button" className="btn btn-accent" onClick={() => addToCart(product, id)}>
+              <button
+                type="button"
+                className="btn btn-accent"
+                onClick={() => addToCart(product, id)}
+              >
                 Add to Cart
               </button>
             </div>
