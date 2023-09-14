@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoArrowForward, IoCartOutline, IoClose } from 'react-icons/io5';
 
 import { Stripe, loadStripe } from '@stripe/stripe-js';
@@ -9,6 +9,7 @@ import CartItem from './CartItem';
 
 const Cart = () => {
   const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
 
   let stripePromise: Promise<Stripe | null> = Promise.resolve(null);
 
@@ -22,7 +23,10 @@ const Cart = () => {
     try {
       const stripe = await stripePromise;
 
-      // TODO disable button
+      if (stripe) {
+        setIsButtonDisabled(true);
+      }
+
       const res = await request.post('/orders', {
         cart,
       });
@@ -30,7 +34,8 @@ const Cart = () => {
       await stripe?.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       });
-      // TODO enable button
+
+      setIsButtonDisabled(false);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -77,6 +82,7 @@ const Cart = () => {
       <div className="px-6">
         {cart.length > 0 ? (
           <div className="flex gap-x-4 justify-between">
+            {/* clear button */}
             <button
               type="button"
               onClick={clearCart}
@@ -84,13 +90,22 @@ const Cart = () => {
             >
               clear cart
             </button>
+
+            {/* checkout button TODO move to component */}
             <button
               type="button"
               className="flex-1 gap-x-2 px-2 btn btn-accent hover:bg-accent-hover"
+              disabled={isButtonDisabled}
               onClick={handlePayment}
             >
-              checkout
-              <IoArrowForward className="text-lg" />
+              {isButtonDisabled ? (
+                <>Loading...</>
+              ) : (
+                <>
+                  checkout
+                  <IoArrowForward className="text-lg" />
+                </>
+              )}
             </button>
           </div>
         ) : (
