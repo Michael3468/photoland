@@ -19,18 +19,19 @@ const Product: FC<Props> = ({ product }) => (
       )}
 
       {/* image */}
+      {/* TODO change localhost to env variable */}
       <section className="w-full h-[200px] flex items-center justify-center relative">
         <img
+          alt={product.attributes.title}
           className="w-[160px] h-[160px] group-hover:scale-90 transition-all"
           src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
-          alt={product.attributes.title}
         />
       </section>
 
       {/* text */}
-      <section className="px-6 pb-8 flex flex-col">
+      <section className="flex flex-col px-6 pb-8">
         {/* category title */}
-        <div className="text-sm text-accent capitalize mb-2">
+        <div className="mb-2 text-sm capitalize text-accent">
           {product.attributes.categories.data[0].attributes.title}
         </div>
 

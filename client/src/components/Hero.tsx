@@ -19,12 +19,12 @@ const Hero = () => (
 
         {/* promos */}
         <section className="flex flex-col gap-y-[30px] w-full max-w-lg mx-auto h-[500px]">
-          <Promo text="Save 35% all dslr cameras" image={PromoImg1} />
+          <Promo image={PromoImg1} text="Save 35% all dslr cameras" />
 
           <Promo
-            text="Save 25% mirrorless cameras"
             image={PromoImg2}
             imageStyles="top-3 -right-4"
+            text="Save 25% mirrorless cameras"
           />
         </section>
       </div>

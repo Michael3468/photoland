@@ -37,14 +37,14 @@ const SearchForm = () => {
     >
       <input
         className="input max-h-[40px]"
-        type="text"
         placeholder="search for a product..."
-        onChange={handleSearchInput}
+        type="text"
         value={searchTerm}
+        onChange={handleSearchInput}
       />
       <button
-        type="submit"
         className="absolute top-0 right-0 px-5 rounded-tl-none rounded-bl-none btn btn-accent max-h-[40px]"
+        type="submit"
       >
         <FiSearch className="text-xl" />
       </button>
