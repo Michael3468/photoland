@@ -31,7 +31,7 @@ const Header = () => {
 
           {/* logo */}
           <Link to="/">
-            <img src={Logo} alt="Logo" />
+            <img alt="Logo" src={Logo} />
           </Link>
 
           {/* search form show on desktop only */}

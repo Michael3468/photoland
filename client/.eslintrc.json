@@ -65,6 +65,13 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".tsx"] }],
     "react/function-component-definition": ["error", {"namedComponents": "arrow-function"}],
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-sort-props": ["warn", {
+      "callbacksLast": true,
+      "shorthandFirst": false,
+      "ignoreCase": true,
+      "noSortAlphabetically": false,
+      "reservedFirst": true
+    }]
   }
 }

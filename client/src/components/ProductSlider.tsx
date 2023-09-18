@@ -15,9 +15,6 @@ type Props = {
 
 const ProductSlider: FC<Props> = ({ data }) => (
   <Swiper
-    modules={[Pagination, Navigation]}
-    loop={false}
-    navigation
     breakpoints={{
       320: {
         slidesPerView: 1,
@@ -36,10 +33,13 @@ const ProductSlider: FC<Props> = ({ data }) => (
         spaceBetween: 30,
       },
     }}
+    className="productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]"
+    loop={false}
+    modules={[Pagination, Navigation]}
+    navigation
     pagination={{
       clickable: true,
     }}
-    className="productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]"
   >
     <div>
       {data?.map((product) => (

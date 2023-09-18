@@ -21,7 +21,7 @@ const CategoryNavMobile: FC<Props> = ({ setCatNavMobile }) => {
       </div>
       <div className="flex flex-col gap-y-8">
         {categories.map((category) => (
-          <Link key={category.id} to={`/products/${category.id}`} className="font-medium uppercase">
+          <Link key={category.id} className="font-medium uppercase" to={`/products/${category.id}`}>
             {`${category.attributes.title} cameras`}
           </Link>
         ))}

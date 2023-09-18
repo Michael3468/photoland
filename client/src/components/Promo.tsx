@@ -11,13 +11,13 @@ const Promo: FC<Props> = ({ text, image, imageStyles = '-top-2 -right-4' }) => (
     {/* text */}
     <div className="flex flex-col max-w-[144px] h-full justify-center ">
       <div className="text-[20px] uppercase font-medium leading-tight mb-4">{text}</div>
-      <a href="#" className="uppercase text-accent">
+      <a className="uppercase text-accent" href="#">
         Shop now
       </a>
     </div>
 
     {/* image */}
-    <img src={image} alt="Promo image" className={`absolute z-20 ${imageStyles}`} />
+    <img alt="Promo image" className={`absolute z-20 ${imageStyles}`} src={image} />
   </section>
 );
 

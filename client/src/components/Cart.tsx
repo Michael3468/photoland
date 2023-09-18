@@ -47,8 +47,8 @@ const Cart = () => {
       <div className="overflow-y-auto overflow-x-hidden h-[75vh]">
         {/* close icon */}
         <div
-          onClick={() => setIsOpen(false)}
           className="text-4xl w-20 h-[98px] flex justify-start items-center cursor-pointer"
+          onClick={() => setIsOpen(false)}
         >
           <IoClose />
         </div>
@@ -56,7 +56,7 @@ const Cart = () => {
         {/* cart items */}
         <div className="flex flex-col gap-y-10 px-2">
           {cart.map((item) => (
-            <CartItem item={item} key={item.id} />
+            <CartItem key={item.id} item={item} />
           ))}
         </div>
       </div>
@@ -84,18 +84,18 @@ const Cart = () => {
           <div className="flex gap-x-4 justify-between">
             {/* clear button */}
             <button
+              className="btn btn-accent hover:bg-accent-hover"
               type="button"
               onClick={clearCart}
-              className="btn btn-accent hover:bg-accent-hover"
             >
               clear cart
             </button>
 
             {/* checkout button TODO move to component */}
             <button
-              type="button"
               className="flex-1 gap-x-2 px-2 btn btn-accent hover:bg-accent-hover"
               disabled={isButtonDisabled}
+              type="button"
               onClick={handlePayment}
             >
               {isButtonDisabled ? (

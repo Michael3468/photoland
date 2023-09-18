@@ -16,10 +16,11 @@ const CartItem: FC<Props> = ({ item }) => {
   return (
     <div className="flex gap-x-8">
       {/* product image with link */}
-      <Link to={`product/${item.id}`} className="w-[70px] h-[70px]">
+      <Link className="w-[70px] h-[70px]" to={`product/${item.id}`}>
         <img
-          src={`http://localhost:1337${item.item.attributes.image.data.attributes.url}`}
+          // TODO change localhost to env variable
           alt={item.item.attributes.title}
+          src={`http://localhost:1337${item.item.attributes.image.data.attributes.url}`}
         />
       </Link>
 

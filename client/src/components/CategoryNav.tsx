@@ -11,15 +11,15 @@ const CategoryNav = () => {
   return (
     <aside className="hidden xl:flex">
       <div className="bg-primary flex flex-col w-[286px] h-[500px] rounded-[10px] overflow-hidden">
-        <div className="bg-accent py-4 text-primary uppercase font-semibold flex items-center justify-center">
+        <div className="flex justify-center items-center py-4 font-semibold uppercase bg-accent text-primary">
           Browse Categories
         </div>
         <div className="flex flex-col gap-y-6 p-6">
           {categories?.map((category) => (
             <Link
               key={category.id}
+              className="uppercase cursor-pointer"
               to={`/products/${category.id}`}
-              className="cursor-pointer uppercase"
             >
               {category.attributes.title}
             </Link>

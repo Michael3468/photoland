@@ -32,10 +32,10 @@ const Qty: FC<Props> = ({ item }) => {
       ) : (
         <input
           className="text-primary placeholder:text-primary h-10 rounded-md p-3 w-[100px] outline-accent"
-          type="text"
           placeholder={`${item.amount}`}
-          onBlur={(event) => handleInput(event, item.id)}
+          type="text"
           value={item.amount}
+          onBlur={(event) => handleInput(event, item.id)}
         />
       )}
     </div>
