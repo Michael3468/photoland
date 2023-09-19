@@ -25,12 +25,12 @@ const Products = () => {
           <CategoryNav />
           <main className="flex flex-col mx-auto">
             {/* title */}
-            <div className="py-3 text-xl uppercase text-center lg:text-left">{`${title} cameras`}</div>
+            <div className="py-3 text-xl text-center uppercase lg:text-left">{`${title} cameras`}</div>
 
             {/* product grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lx:grid-cols-4 gap-[15px] md:gap-[30px]">
               {products?.map((product) => (
-                <Product product={product} key={product.id} />
+                <Product key={product.id} product={product} />
               ))}
             </div>
           </main>

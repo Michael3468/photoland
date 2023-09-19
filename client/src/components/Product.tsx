@@ -19,12 +19,11 @@ const Product: FC<Props> = ({ product }) => (
       )}
 
       {/* image */}
-      {/* TODO change localhost to env variable */}
       <section className="w-full h-[200px] flex items-center justify-center relative">
         <img
           alt={product.attributes.title}
           className="w-[160px] h-[160px] group-hover:scale-90 transition-all"
-          src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
+          src={`${process.env.REACT_APP_API_URL}${product.attributes.image.data.attributes.url}`}
         />
       </section>
 
