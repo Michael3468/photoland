@@ -39,11 +39,11 @@ const ProductDetails = () => {
         <div className="flex flex-col lg:flex-row gap-[30px] mb-[30px]">
           <div className="lg:max-w-[40%] lg:min-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center">
             <img
-              src={
-                product && `http://localhost:1337${product.attributes.image.data.attributes.url}`
-              }
               alt={product && product?.attributes.image.data.attributes.name}
               className="p-2 w-full sm:p-5"
+              src={
+                product && `${process.env.REACT_APP_API_URL}${product.attributes.image.data.attributes.url}`
+              }
             />
           </div>
           <div className="flex flex-col flex-1 justify-center p-6 rounded-lg sm:p-10 lg:p-12 xl:p-20 bg-primary">
@@ -65,8 +65,8 @@ const ProductDetails = () => {
                 {`$${product?.attributes.price}`}
               </div>
               <button
-                type="button"
                 className="btn btn-accent"
+                type="button"
                 onClick={() => addToCart(product, id)}
               >
                 Add to Cart

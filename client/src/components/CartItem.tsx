@@ -18,9 +18,8 @@ const CartItem: FC<Props> = ({ item }) => {
       {/* product image with link */}
       <Link className="w-[70px] h-[70px]" to={`product/${item.id}`}>
         <img
-          // TODO change localhost to env variable
           alt={item.item.attributes.title}
-          src={`http://localhost:1337${item.item.attributes.image.data.attributes.url}`}
+          src={`${process.env.REACT_APP_API_URL}${item.item.attributes.image.data.attributes.url}`}
         />
       </Link>
 
