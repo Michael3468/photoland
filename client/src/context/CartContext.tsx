@@ -45,6 +45,7 @@ const CartProvider: FC<Props> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState<TCart[]>([]);
   const [itemsAmount, setItemsAmount] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [amount, setAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
