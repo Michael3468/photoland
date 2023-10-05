@@ -21,7 +21,7 @@ const Search = () => {
           {/* category nav */}
           <CategoryNav />
 
-          <div>
+          <div className="w-[100%]">
             {/* title */}
             <div className="py-3 text-xl text-center uppercase lg:text-left">
               {products.length > 0
