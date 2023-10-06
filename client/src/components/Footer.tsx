@@ -12,7 +12,7 @@ const Footer = () => (
       </div>
 
       {/* form */}
-      <form className="flex flex-col gap-5 mx-auto my-14 w-full max-w-3xl md:flex-row">
+      <form className="flex flex-col gap-5 mx-auto my-14 w-full max-w-3xl sm:flex-row">
         <input className="input" placeholder="Your email address" type="text" />
         <button className="btn btn-accent min-w-[150px]" type="button">
           Join

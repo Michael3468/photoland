@@ -62,7 +62,7 @@ const MainSlider = () => (
                 <br />
                 {slide.titlePart3}
               </div>
-              <button className="mx-auto btn btn-accent lg:mx-0" type="button">
+              <button className="hidden lg:flex mx-auto btn btn-accent lg:mx-0" type="button">
                 {slide.btnText}
               </button>
             </div>
@@ -75,6 +75,10 @@ const MainSlider = () => (
                 src={slide.img}
               />
             </div>
+
+            <button className="lg:hidden mx-auto btn btn-accent lg:mx-0" type="button">
+              {slide.btnText}
+            </button>
           </div>
         </SwiperSlide>
       ))}

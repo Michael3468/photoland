@@ -9,11 +9,13 @@ const CategoryNav = () => {
   const categories = data ? (data as TCategory[]) : null;
 
   return (
-    <aside className="hidden xl:flex">
-      <div className="bg-primary flex flex-col w-[286px] h-[500px] rounded-[10px] overflow-hidden">
+    // TODO: refactoring add mb-7 to aside
+    <aside className="hidden xl:flex h-[auto]">
+      <div className="bg-primary flex flex-col w-[286px] rounded-[10px] overflow-hidden">
         <div className="flex justify-center items-center py-4 font-semibold uppercase bg-accent text-primary">
           Browse Categories
         </div>
+
         <div className="flex flex-col gap-y-6 p-6">
           {categories?.map((category) => (
             <Link
