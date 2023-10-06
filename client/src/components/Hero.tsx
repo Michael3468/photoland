@@ -8,9 +8,7 @@ const Hero = () => (
     <div className="container mx-auto">
       <div className="flex flex-col gap-y-[30px] xl:flex-row xl:gap-x-[30px]">
         {/* sidebar */}
-        <div>
-          <CategoryNav />
-        </div>
+        <CategoryNav />
 
         {/* main slider */}
         <div className="w-full max-w-lg lg:max-w-[734px] mx-auto">
@@ -18,7 +16,7 @@ const Hero = () => (
         </div>
 
         {/* promos */}
-        <section className="flex flex-col gap-y-[30px] w-full max-w-lg mx-auto h-[500px]">
+        <section className="flex flex-col lg:flex-row xl:flex-col gap-y-[30px] gap-x-[30px] w-full mx-auto h-[auto] lg:max-w-[734px] sm:max-w-[512px]">
           <Promo image={PromoImg1} text="Save 35% all dslr cameras" />
 
           <Promo

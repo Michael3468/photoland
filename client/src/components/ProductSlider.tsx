@@ -33,7 +33,7 @@ const ProductSlider: FC<Props> = ({ data }) => (
         spaceBetween: 30,
       },
     }}
-    className="productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]"
+    className="productSlider mx-auto sm:max-w-[512px] lg:max-w-[734px] xl:max-w-[1410px]"
     loop={false}
     modules={[Pagination, Navigation]}
     navigation
