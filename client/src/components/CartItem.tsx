@@ -3,7 +3,7 @@ import { IoClose } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
 import { CartContext } from '../context/CartContext';
-import { TCart } from '../types';
+import { TCart } from '../shared/types';
 import Qty from './Qty';
 
 type Props = {

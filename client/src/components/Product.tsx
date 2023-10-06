@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 type Props = {
   product: TProduct;

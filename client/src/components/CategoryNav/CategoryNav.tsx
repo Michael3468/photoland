@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import useFetch from '../hooks/useFetch';
-import { TCategory } from '../types';
+import useFetch from '../../hooks/useFetch';
+import { IPositioning, TCategory } from '../../shared/types';
 
-const CategoryNav = () => {
+type ICategoryNavProps = IPositioning
+
+const CategoryNav: FC<ICategoryNavProps> = ({ mt, mb, ml, mr, m }) => {
   const { data } = useFetch('/categories');
   const categories = data ? (data as TCategory[]) : null;
+  const positioning = `${mt ? `mt-${mt}` : ''}
+                       ${mb ? `mb-${mb}` : ''}
+                       ${ml ? `ml-${ml}` : ''}
+                       ${mr ? `mr-${mr}` : ''}
+                       ${m ? `m-${m}` : ''}
+                      `.trim();
 
   return (
-    // TODO: refactoring add mb-7 to aside
-    <aside className="hidden xl:flex h-[auto]">
+    <aside className={`hidden xl:flex h-[auto] ${positioning}`}>
       <div className="bg-primary flex flex-col w-[286px] rounded-[10px] overflow-hidden">
         <div className="flex justify-center items-center py-4 font-semibold uppercase bg-accent text-primary">
           Browse Categories

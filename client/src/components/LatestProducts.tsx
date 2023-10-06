@@ -4,7 +4,6 @@ import { ProductSlider } from '.';
 import useFetch from '../hooks/useFetch';
 
 const LatestProducts: FC = () => {
-  // TODO: rename variable to newProducts
   const { data } = useFetch('/products?populate=*&filters[isNew]=true');
 
   return (

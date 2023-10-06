@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { CategoryNav, Product } from '../components';
 import { constants } from '../constants';
 import useFetch from '../hooks/useFetch';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 const Search = () => {
   const location = useLocation();
@@ -18,7 +18,7 @@ const Search = () => {
     <div className={`${constants.themes.main.styles.contentBlock.marginTop}`}>
       <div className="container mx-auto">
         <div className="flex gap-x-[30px] justify-center">
-          <CategoryNav />
+          <CategoryNav mb={7} />
 
           <div className="w-[100%]">
             {/* title */}

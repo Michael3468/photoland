@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 
 import { CartContext } from '../context/CartContext';
-import { TCart } from '../types';
+import { TCart } from '../shared/types';
 
 type Props = {
   item: TCart;
