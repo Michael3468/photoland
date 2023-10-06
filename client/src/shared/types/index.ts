@@ -1,3 +1,28 @@
+/**
+ * example for margins:
+ *
+ * destructure in component and assign to constant
+ *
+ * const positioning = `${mt ? `mt-${mt}` : ''}
+                        ${mb ? `mb-${mb}` : ''}
+                        ${ml ? `ml-${ml}` : ''}
+                        ${mr ? `mr-${mr}` : ''}
+                        ${m ? `m-${m}` : ''}
+                       `.trim();
+ */
+interface IPositioning {
+  mt?: number;
+  mb?: number;
+  ml?: number;
+  mr?: number;
+  m?: number;
+  pt?: number;
+  pb?: number;
+  pl?: number;
+  pr?: number;
+  p?: number;
+}
+
 type TProduct = {
   id: number;
   attributes: {
@@ -44,4 +69,4 @@ type TCart = {
   amount: number;
 };
 
-export type { TProduct, TCategory, TCart };
+export type { IPositioning, TProduct, TCategory, TCart };

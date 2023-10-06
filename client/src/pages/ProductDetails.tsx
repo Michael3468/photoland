@@ -5,7 +5,7 @@ import { RelatedProducts } from '../components';
 import { constants } from '../constants';
 import { CartContext } from '../context/CartContext';
 import useFetch from '../hooks/useFetch';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 const ProductDetails = () => {
   const { addToCart } = useContext(CartContext);

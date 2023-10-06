@@ -8,7 +8,7 @@ const Hero = () => (
     <div className="container mx-auto">
       <div className="flex flex-col gap-y-[30px] xl:flex-row xl:gap-x-[30px]">
         {/* sidebar */}
-        <CategoryNav />
+        <CategoryNav mb={7} />
 
         {/* main slider */}
         <div className="w-full max-w-lg lg:max-w-[734px] mx-auto">

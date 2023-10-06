@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CategoryNav, Product } from '../components';
 import { constants } from '../constants';
 import useFetch from '../hooks/useFetch';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 const Products = () => {
   const { id } = useParams();
@@ -22,7 +22,7 @@ const Products = () => {
     <div className={`mb-16 ${constants.themes.main.styles.contentBlock.marginTop}`}>
       <div className="container mx-auto">
         <div className="flex gap-x-[30px]">
-          <CategoryNav />
+          <CategoryNav mb={7} />
 
           <main className="flex flex-col mx-auto">
             {/* title */}
