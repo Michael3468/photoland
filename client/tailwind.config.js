@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: '"Exo 2"',
+      primary: 'Exo2',
     },
     container: {
       padding: {
