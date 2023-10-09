@@ -3,7 +3,7 @@ import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Product } from '.';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.min.css';

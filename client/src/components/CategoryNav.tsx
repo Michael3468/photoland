@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import useFetch from '../hooks/useFetch';
-import { TCategory } from '../types';
+import { TCategory } from '../shared/types';
 
 const CategoryNav = () => {
   const { data } = useFetch('/categories');
   const categories = data ? (data as TCategory[]) : null;
 
   return (
-    // TODO: refactoring add mb-7 to aside
     <aside className="hidden xl:flex h-[auto]">
       <div className="bg-primary flex flex-col w-[286px] rounded-[10px] overflow-hidden">
         <div className="flex justify-center items-center py-4 font-semibold uppercase bg-accent text-primary">

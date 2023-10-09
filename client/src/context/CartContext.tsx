@@ -9,7 +9,7 @@ import React, {
   useState,
 } from 'react';
 
-import { TCart, TProduct } from '../types';
+import { TCart, TProduct } from '../shared/types';
 
 type CartContextType = {
   isOpen: boolean;

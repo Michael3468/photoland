@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CategoryNav, Product } from '../components';
 import { constants } from '../constants';
 import useFetch from '../hooks/useFetch';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 const Products = () => {
   const { id } = useParams();
@@ -30,9 +30,7 @@ const Products = () => {
 
             {/* product grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lx:grid-cols-4 gap-[15px] md:gap-[30px]">
-              {products?.map((product) => (
-                <Product key={product.id} product={product} />
-              ))}
+              {products?.map((product) => <Product key={product.id} product={product} />)}
             </div>
           </main>
         </div>
