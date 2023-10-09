@@ -17,7 +17,7 @@ const Search = () => {
   return (
     <div className={`${constants.themes.main.styles.contentBlock.marginTop}`}>
       <div className="container mx-auto">
-        <div className="flex gap-x-[30px] justify-center">
+        <div className="flex gap-x-[30px] justify-center mb-7">
           <CategoryNav />
 
           <div className="w-[100%]">
