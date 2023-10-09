@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { CategoryNav, Product } from '../components';
 import { constants } from '../constants';
 import useFetch from '../hooks/useFetch';
-import { TProduct } from '../types';
+import { TProduct } from '../shared/types';
 
 const Search = () => {
   const location = useLocation();

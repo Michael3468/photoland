@@ -3,7 +3,7 @@ import { FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import useFetch from '../hooks/useFetch';
-import { TCategory } from '../types';
+import { TCategory } from '../shared/types';
 
 type Props = {
   setCatNavMobile: React.Dispatch<SetStateAction<boolean>>;
